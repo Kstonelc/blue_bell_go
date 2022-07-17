@@ -30,7 +30,7 @@ func main() {
 	}
 	defer zap.L().Sync()
 	//2 初始化日志
-	if err := logger.Init(); err != nil {
+	if err := logger.Init(settings.Conf.Mode); err != nil {
 		fmt.Printf("initial logger failed, err:%v\n", err)
 		return
 	}
